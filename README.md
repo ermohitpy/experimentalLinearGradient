@@ -1,97 +1,100 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+🚀 React Native Linear Gradient Without Third-Party Dependency (RN ≥ 0.76)
 
-# Getting Started
+This repository demonstrates how to create linear gradients in React Native (version 0.76 and above) using the new built-in style property:
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+experimental_backgroundImage
 
-## Step 1: Start Metro
+This approach removes the need for third-party libraries like:
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+react-native-linear-gradient
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+and helps keep your application lighter and easier to maintain.
 
-```sh
-# Using npm
-npm start
+✨ Why Use This Approach?
 
-# OR using Yarn
-yarn start
-```
+Using experimental_backgroundImage:
 
-## Step 2: Build and run your app
+✅ removes external dependencies
+✅ reduces app bundle size
+✅ simplifies styling
+✅ works directly inside View styles
+✅ supports gradient direction (angles)
+✅ works for gradient buttons and containers
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+📦 Requirements
 
-### Android
+Make sure your project is using:
 
-```sh
-# Using npm
-npm run android
+React Native >= 0.76
 
-# OR using Yarn
-yarn android
-```
+This feature is not available in earlier versions.
 
-### iOS
+📱 Example Usage
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+Basic gradient example:
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+const GRADIENT = ['#222795', '#0E7E3D'];
 
-```sh
-bundle install
-```
+<View
+  style={{
+    experimental_backgroundImage:
+      `linear-gradient(${GRADIENT.join(', ')})`,
+    height: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+  }}
+>
+  <Text style={{ color: 'white' }}>
+    Gradient without dependency
+  </Text>
+</View>
+🎯 Gradient With Angle Support
 
-Then, and every time you update your native dependencies, run:
+Example:
 
-```sh
-bundle exec pod install
-```
+experimental_backgroundImage:
+  `linear-gradient(135deg, ${GRADIENT.join(', ')})`
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+This produces directional gradients similar to:
 
-```sh
-# Using npm
-npm run ios
+react-native-linear-gradient
+🔘 Gradient Button Example:
 
-# OR using Yarn
-yarn ios
-```
+<TouchableOpacity
+  style={{
+    experimental_backgroundImage:
+      `linear-gradient(135deg, ${GRADIENT.join(', ')})`,
+    padding: 12,
+    borderRadius: 8,
+  }}
+>
+  <Text style={{ color: 'white' }}>
+    Gradient Button
+  </Text>
+</TouchableOpacity>
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+⚠️ Important Notes
+Works only with React Native ≥ 0.76
+Currently an experimental styling API
+Behavior may change in future React Native releases
+Always test on both Android and iOS
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
 
-## Step 3: Modify your app
+This repository is part of my React Native implementation guide series.
 
-Now that you have successfully run the app, let's make changes!
+Full article available here: 
+https://medium.com/@ermohit2k18/no-more-third-party-linear-gradient-in-react-native-react-native-0-76-5e36f0efe1fb
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+👉 (Add your Medium article link here after publishing)
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+🔥 More React Native + Firebase Guides Coming
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+I regularly share production-ready tutorials covering:
 
-## Congratulations! :tada:
+Firebase Push Notifications
+Firebase Analytics
+Firebase Remote Config
+Modern React Native built-in alternatives to third-party libraries
+Performance improvements for real-world apps
 
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Stay connected for more updates 🚀
